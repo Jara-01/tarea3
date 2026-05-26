@@ -117,12 +117,25 @@ public class Expendedor{
 
         /**
          * Si todo sale bien, entonces se calcula la diferencia entre lo pagado
-         * y el precio del producto. Ese vuelto se deja en monedas de 100
-         * dentro del deposito de monedas de vuelto.
+         * y el precio del producto. Ese vuelto se deja en monedas en el mayor valor
+         * de moneda posible para completar el vuelto requerido.
          */
-        int cantidadVuelto = (dinero.getValor() - productoActual.getPrecio()) / 100;
-        for (int i = 0; i < cantidadVuelto; i++) {
+        int cantidadVuelto = (dinero.getValor() - productoActual.getPrecio());
+        while(cantidadVuelto >= 1500) {
+            monVu.addElemento(new Moneda1500());
+            cantidadVuelto -= 1500;
+        }
+        while(cantidadVuelto >= 1000) {
+            monVu.addElemento(new Moneda1000());
+            cantidadVuelto -= 1000;
+        }
+        while(cantidadVuelto >= 500) {
+            monVu.addElemento(new Moneda500());
+            cantidadVuelto -= 500;
+        }
+        while(cantidadVuelto >= 100) {
             monVu.addElemento(new Moneda100());
+            cantidadVuelto -= 100;
         }
 
         this.prodVu = auxOut;
