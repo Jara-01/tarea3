@@ -26,7 +26,8 @@ public class Comprador {
          * Si logra obtener un producto, guarda en sonido el texto
          * que entrega el metodo consumir de ese producto.
          */
-        Producto b = exp.comprarProducto(m, cualProducto);
+        exp.comprarProducto(m, cualProducto);
+        Producto b = exp.getProducto();
         if (b != null) {
             this.sonido = b.consumir();
         }

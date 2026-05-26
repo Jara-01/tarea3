@@ -12,8 +12,9 @@ public class Expendedor{
     private Deposito<Producto> snickers;
     private Deposito<Producto> super8;
 
-    /** Depósito reservado para almacenar las monedas del vuelto */
+    /** Depósitos para almacenar las monedas del vuelto, y el producto otorgado */
     private Deposito<Moneda> monVu;
+    private Producto prodVu;
 
     /**
      * Método constructor que inicializa todos los depósitos
@@ -41,14 +42,13 @@ public class Expendedor{
 
     /**
      * Método principal, recibe una moneda y un tipo de producto y procesa si la moneda es suficiente para comprar el
-     * producto elegido, devuelve el producto si corresponde y entrega monedas al depósito del vuelto si el pago es
+     * producto elegido, almacena el producto si corresponde y entrega monedas al depósito del vuelto si el pago es
      * mayor al precio del producto.
      *
      * @param dinero Moneda que el usuario usa para comprar un producto.
      * @param type Identificador numérico del tipo de producto elegido por el usuario.
-     * @return El producto elegido por el usuario si el dinero es suficiente
     */
-    public Producto comprarProducto(Moneda dinero, int type)
+    public void comprarProducto(Moneda dinero, int type)
             throws PagoIncorrectoException, PagoInsuficienteException, NoHayProductoException {
         /**
          * Primero se revisa el caso en que no haya moneda.
@@ -125,9 +125,24 @@ public class Expendedor{
             monVu.addElemento(new Moneda100());
         }
 
-        return auxOut;
+        this.prodVu = auxOut;
     }
+
+    /**
+     * Getter de la primera moneda del vuelto
+     * @return Última moneda del depósito de vuelto
+     */
     public Moneda getVuelto() {
         return monVu.getElemento();
+    }
+
+    /**
+     * Getter del producto elegido por el comprador, vaciando el depósito
+     * @return Producto comprado
+     */
+    public Producto getProducto() {
+        Producto auxOut = this.prodVu;
+        this.prodVu = null;
+        return auxOut;
     }
 }

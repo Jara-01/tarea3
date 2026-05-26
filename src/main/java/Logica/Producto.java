@@ -1,7 +1,7 @@
 package Logica;
 
 /** Clase para hacer de superclase a todos los productos que expendedor va a vender */
-abstract class Producto {
+public abstract class Producto {
     /** Número de serie arbitrario para identificar a cada elemento */
     private int serie;
 
