@@ -1,4 +1,4 @@
-package Tarea1;
+package Logica;
 import java.util.ArrayList;
 
 /**

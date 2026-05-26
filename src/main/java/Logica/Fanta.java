@@ -1,13 +1,13 @@
-package Tarea1;
+package Logica;
 
-/** Uno de los 2 tipos de dulces, extiende a Dulce. */
-class Snickers extends Dulce{
+/** Uno de los 3 sabores de bebida, extiende a Bebida. */
+class Fanta extends Bebida{
     /**
      * Constructor que instancia un número de serie según la superclase Producto.
      *
      * @param serieIn Número de serie
      */
-    public Snickers(int serieIn) {
+    public Fanta(int serieIn) {
         super(serieIn);
     }
     /**
@@ -16,6 +16,6 @@ class Snickers extends Dulce{
      * @return Nombre del producto
      */
     public String consumir(){
-        return "snickers";
+        return "fanta";
     }
 }

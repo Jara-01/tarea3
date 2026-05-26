@@ -1,11 +1,11 @@
-package Tarea1;
+package Logica;
 
 /**
  * La clase del cliente y usuario de Expendedor.
  * Al ser instanciado, instantáneamente compra un producto con una moneda.
  * Almacena el consumo del producto que compra y el vuelto que recibe moneda por moneda.
  */
-class Comprador {
+public class Comprador {
     /** sonido almacena el string de "consumir" de cada producto. */
     private String sonido;
     /** vuelto almaacena el valor total de todas las monedas recojidas del expendedor. */

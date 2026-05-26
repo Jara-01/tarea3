@@ -1,4 +1,4 @@
-package Tarea1;
+package Logica;
 
 /** Exepción personalizada para los casos en que no queden productos en un depósito o se acceda a un depósito imposible. */
 public class NoHayProductoException extends Exception {

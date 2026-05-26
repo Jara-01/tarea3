@@ -1,4 +1,4 @@
-package Tarea1;
+package Logica;
 
 /** Clase para hacer de superclase a todos los productos que expendedor va a vender */
 abstract class Producto {

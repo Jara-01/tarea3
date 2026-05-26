@@ -1,4 +1,4 @@
-package Tarea1;
+package Logica;
 
 /** Exepción personalizada por si se intenta comprar con una moneda inválida (null.) */
 public class PagoIncorrectoException extends Exception {

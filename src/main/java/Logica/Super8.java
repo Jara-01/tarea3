@@ -1,4 +1,4 @@
-package Tarea1;
+package Logica;
 
 /** Uno de los 2 tipos de dulces, extiende a Dulce. */
 class Super8 extends Dulce{

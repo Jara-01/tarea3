@@ -1,4 +1,4 @@
-package Tarea1;
+package Logica;
 
 /**
  * Enumeración de todos los productos disponibles con sus respectivos precios e identificadores numéricos.

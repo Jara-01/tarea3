@@ -1,4 +1,4 @@
-package Tarea1;
+package Logica;
 
 /** Exepción personalizada en cazo de que se intente comprar un producto con menos dinero que su precio. */
 public class PagoInsuficienteException extends Exception {

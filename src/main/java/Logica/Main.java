@@ -1,14 +1,9 @@
-package Tarea1;
+package Logica;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-/**
- * Tarea 1 de Desarrollo Orientado a Objetos
- * @author Benjamín Antonio Rivas Sepulveda
- * @author Ignacio Moisés Lama Méndez
- * @author Joaquín Enrique Jara Troncoso
- */
+
 public class Main {
     static public void main(String[] args) {
         /**

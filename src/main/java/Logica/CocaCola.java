@@ -1,4 +1,4 @@
-package Tarea1;
+package Logica;
 
 /** Uno de los 3 sabores de bebida, extiende a Bebida. */
 class CocaCola extends Bebida{

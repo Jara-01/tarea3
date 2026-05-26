@@ -1,10 +1,10 @@
-package Tarea1;
+package Logica;
 
 /**
  * La clase Expendedor maneja los procesos principales del programa.
  * Es el encargado de recibir el dinero de un comprador, y responder apropiadamente según el producto que se pida.
 */
-class Expendedor{
+public class Expendedor{
     /** Depósitos tipo Producto para cada producto disponible diferente */
     private Deposito<Producto> coca;
     private Deposito<Producto> sprite;

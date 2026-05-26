@@ -1,9 +1,9 @@
-package Tarea1;
+package Logica;
 /**
  * Clase abstracta para las monedas.
  * Permite obtener su valor, la serie y compararla con otras monedas.
  */
-abstract class Moneda implements Comparable<Moneda>{
+public abstract class Moneda implements Comparable<Moneda>{
     public Moneda(){}
 
     /**

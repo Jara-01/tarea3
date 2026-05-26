@@ -1,4 +1,4 @@
-package Tarea1;
+package Logica;
 
 /** Clase que hereda de Producto y hace de superclase para los 3 sabores de bebida. */
 abstract class Bebida extends Producto{

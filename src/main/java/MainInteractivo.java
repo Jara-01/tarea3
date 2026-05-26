@@ -1,13 +1,20 @@
-package Tarea1;
+import Logica.*;
+import UserInterface.*;
 
 import java.util.Scanner;
 
 /**
+ * Tarea 3 de Desarrollo Orientado a Objetos
+ * @author Benjamín Antonio Rivas Sepulveda
+ * @author Ignacio Moisés Lama Méndez
+ * @author Joaquín Enrique Jara Troncoso
+ *
  * Clase main interactivo que simula el uso de un expendedor.
  * Permite al usuario seleccionar una moneda, elegir un producto,
  * intentar comprarlo y decidir si consumirlo o si tomar el vuelto.
  */
-public class MainInteractivo {
+
+class MainInteractivo {
 
     /**
      *  Método principal que ejecuta el programa interactivo.
