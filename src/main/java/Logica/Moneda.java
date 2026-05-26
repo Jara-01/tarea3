@@ -4,14 +4,17 @@ package Logica;
  * Permite obtener su valor, la serie y compararla con otras monedas.
  */
 public abstract class Moneda implements Comparable<Moneda>{
-    public Moneda(){}
+    private int serie;
+
+    /** El constructor asigna el número de serie según la posición en memoria */
+    public Moneda(){this.serie = this.hashCode();}
 
     /**
-     * Metodo que retorna la direccion de memoria como serie.
+     * Metodo que retorna la el número de serie.
      * @return número de serie de la moneda.
      */
     public int getSerie(){
-        return this.hashCode();
+        return serie;
     }
 
     /**
