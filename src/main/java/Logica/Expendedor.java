@@ -12,8 +12,9 @@ public class Expendedor{
     private Deposito<Producto> snickers;
     private Deposito<Producto> super8;
 
-    /** Depósitos para almacenar las monedas del vuelto, y el producto otorgado */
+    /** Depósitos para almacenar las monedas del vuelto, el producto otorgado y las monedas recibidas */
     private Deposito<Moneda> monVu;
+    private Deposito<Moneda> ganancias;
     private Producto prodVu;
 
     /**
@@ -38,6 +39,7 @@ public class Expendedor{
             super8.addElemento(new Super8(i+50));
         }
         monVu = new Deposito<Moneda>();
+        ganancias = new Deposito<Moneda>();
     }
 
     /**
@@ -114,6 +116,9 @@ public class Expendedor{
             monVu.addElemento(dinero);
             throw new NoHayProductoException("No quedan productos de ese tipo");
         }
+
+        /** Si la compra es completamente exitosa, la moneda recibida se añade al depósito de ganancias */
+        this.ganancias.addElemento(dinero);
 
         /**
          * Si todo sale bien, entonces se calcula la diferencia entre lo pagado
