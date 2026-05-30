@@ -7,5 +7,5 @@ abstract class Dulce extends Producto {
      *
      * @param serieIn Número de serie
      */
-    public Dulce(int serieIn){super(serieIn);}
+    public Dulce(int serieIn){super();}
 }

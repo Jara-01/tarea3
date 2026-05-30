@@ -5,7 +5,7 @@ import java.util.ArrayList;
  * Clase que almacena cierto tipo de objeto.
  * Es inicializado vacío y se puede llenar con elementos del tipo correcto o retirar en un sistema FIFO.
 */
-class Deposito<T> {
+public class Deposito<T> {
     /** almacen es dónde se guardan y retiran los elementos del tipo determinado al ser instanciado */
     private ArrayList<T> almacen;
 

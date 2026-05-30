@@ -7,5 +7,5 @@ abstract class Bebida extends Producto{
      *
      * @param serieIn Número de serie
     */
-    public Bebida(int serieIn) {super(serieIn);}
+    public Bebida(int serieIn) {super();}
 }
