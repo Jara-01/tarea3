@@ -22,4 +22,9 @@ public class Deposito<T> {
         if (almacen.size() != 0) return almacen.remove(0);
         else return null;
     }
+
+    /** Getter de su almacén */
+    public ArrayList<T> getAlmacen() {
+        return almacen;
+    }
 }
