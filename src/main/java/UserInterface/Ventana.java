@@ -1,11 +1,13 @@
 package UserInterface;
 
+import Logica.NoHayProductoException;
+
 import java.awt.*;
 import javax.swing.*;
 
 public class Ventana extends JFrame{
 
-    public Ventana() throws HeadlessException {
+    public Ventana() throws HeadlessException, NoHayProductoException {
         super();
         this.setLayout(new BorderLayout());
 

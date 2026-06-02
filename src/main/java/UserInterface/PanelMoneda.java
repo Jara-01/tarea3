@@ -17,22 +17,22 @@ public class PanelMoneda extends JPanel {
 
     @Override
     public void paintComponent (Graphics g) {
-
+        super.paintComponent(g);
         switch (valor){
             case 100:
-                g.setColor(new Color(184,115,51));
+                g.setColor(new Color(159, 110, 44));
                 break;
             case 500:
-                g.setColor(new Color(208,148,34));
+                g.setColor(new Color(213, 149, 41));
                 break;
             case 1000:
-                g.setColor(new Color(231,182,17));
+                g.setColor(new Color(232, 184, 24));
                 break;
             case 1500:
-                g.setColor(new Color(255,215,0));
+                g.setColor(new Color(255, 221,0));
                 break;
 
         }
-        g.fillOval(x + 15,y +15,100,100);
+        g.fillOval(x, y,40,40);
     }
 }

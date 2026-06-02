@@ -23,22 +23,27 @@ public class PanelDeposito extends JPanel {
 
     @Override
     public void paintComponent (Graphics g) {
+        super.paintComponent(g);
         if(deposito == null){
             return;
         }
 
-        int separacion = 5;
-
+        int separacion = 20;
+        int i = 0;
         for(Object obj : deposito.getAlmacen()) {
             if (obj instanceof Moneda) {
-                PanelMoneda m = new PanelMoneda(x + 15, y + separacion, ((Moneda) obj).getValor());
+                int posX = x + (i % 3) * 45;
+                int posY = y + 5 + (i / 3) * 45;
+                PanelMoneda m = new PanelMoneda(posX, posY, ((Moneda) obj).getValor());
                 m.paintComponent(g);
+                i++;
             } else if (obj instanceof Producto){
-                PanelProducto p = new PanelProducto(x + 15, y + separacion, (Producto) obj);
+                PanelProducto p = new PanelProducto(x + separacion, y + 14, (Producto) obj);
                 p.paintComponent(g);
+                separacion += 65;
             }
 
-            separacion += 30;
         }
+
     }
 }
