@@ -4,7 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 
 import Logica.Deposito;
-
+import Logica.Moneda;
+import Logica.Producto;
 
 
 public class PanelDeposito extends JPanel {
@@ -22,27 +23,22 @@ public class PanelDeposito extends JPanel {
 
     @Override
     public void paintComponent (Graphics g) {
-        super.paintComponent(g);
-
-        g.setColor(Color.darkGray);
-        g.fillRect(x, y, 70, 40);
-
         if(deposito == null){
             return;
         }
 
         int separacion = 5;
-        /*for(Object obj : deposito.getAlmacen()){
-            if(obj instanceof Moneda){
-                PanelMoneda m = new PanelMoneda(x + 15,y +separacion, ((Moneda) obj).getValor());
+
+        for(Object obj : deposito.getAlmacen()) {
+            if (obj instanceof Moneda) {
+                PanelMoneda m = new PanelMoneda(x + 15, y + separacion, ((Moneda) obj).getValor());
                 m.paintComponent(g);
-            }
-            else {
-                PanelProducto p = new PanelProducto(x + 15, y + separacion);
+            } else if (obj instanceof Producto){
+                PanelProducto p = new PanelProducto(x + 15, y + separacion, (Producto) obj);
                 p.paintComponent(g);
             }
 
             separacion += 30;
-        }*/
+        }
     }
 }
