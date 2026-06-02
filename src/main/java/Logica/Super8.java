@@ -1,7 +1,7 @@
 package Logica;
 
 /** Uno de los 2 tipos de dulces, extiende a Dulce. */
-class Super8 extends Dulce{
+public class Super8 extends Dulce{
     /**
      * Constructor que instancia un número de serie según la superclase Producto.
      *

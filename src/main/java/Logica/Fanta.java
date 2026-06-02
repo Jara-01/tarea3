@@ -1,7 +1,7 @@
 package Logica;
 
 /** Uno de los 3 sabores de bebida, extiende a Bebida. */
-class Fanta extends Bebida{
+public class Fanta extends Bebida{
     /**
      * Constructor que instancia un número de serie según la superclase Producto.
      *
