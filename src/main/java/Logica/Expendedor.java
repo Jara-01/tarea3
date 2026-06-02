@@ -190,4 +190,5 @@ public class Expendedor{
      * @return depósito de vuelto
      */
     public Deposito<Moneda> getMonVu(){return monVu;}
+    public Producto getProdFinal(){return prodVu;}
 }
