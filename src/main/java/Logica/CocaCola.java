@@ -18,4 +18,9 @@ public class CocaCola extends Bebida{
     public String consumir(){
         return "cocacola";
     }
+
+    @Override
+    public String rutaImagen() {
+        return "/coca.png";
+    }
 }

@@ -18,4 +18,9 @@ public class Snickers extends Dulce{
     public String consumir(){
         return "snickers";
     }
+
+    @Override
+    public String rutaImagen() {
+        return "/snickers.png";
+    }
 }
