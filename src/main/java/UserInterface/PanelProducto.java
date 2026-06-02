@@ -16,32 +16,23 @@ public class PanelProducto extends JPanel {
         this.x = x;
         this.y = y;
 
-        String rutaImagen = "";
-        if(producto instanceof CocaCola){
-            rutaImagen = "/coca.png";
-        } else if (producto instanceof Sprite) {
-            rutaImagen = "/sprite.png";
-        } else if (producto instanceof  Fanta) {
-            rutaImagen = "/fanta.png";
-        } else if (producto instanceof  Super8) {
-            rutaImagen = "/super8.png";
-        } else if (producto instanceof Snickers) {
-            rutaImagen = "/snickers.png";
+        if(producto == null) {
+            imagenProducto = null;
+            return;
         }
 
-        URL url = getClass().getResource(rutaImagen);
+        URL url = getClass().getResource(producto.rutaImagen());
         if(url != null) {
             imagenProducto = new ImageIcon(url).getImage();
         }
         else {
             imagenProducto = null;
         }
-
     }
 
     @Override
     public void paintComponent (Graphics g) {
-
-        g.drawImage(imagenProducto, x, y,50,50,null);
+        super.paintComponent(g);
+        g.drawImage(imagenProducto, x, y,45,65,this);
     }
 }
