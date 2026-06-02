@@ -163,4 +163,31 @@ public class Expendedor{
         this.prodVu = null;
         return auxOut;
     }
+
+    /**
+     * Getter de un depósito de productos según el número indicado al llamar al método
+     * El número corresponde a los mismos que se usan internamente según el Enum Precios
+     * @return deposito escogido
+     */
+    public Deposito<Producto> getDepProducto(int type) throws NoHayProductoException {
+        Precios depositoActual = Precios.producto(type);
+
+        if(depositoActual == null){
+            throw new NoHayProductoException("No existe el depósito indicado");
+        }
+
+        return switch (depositoActual) {
+            case COCACOLA -> coca;
+            case SPRITE -> sprite;
+            case FANTA -> fanta;
+            case SNICKERS -> snickers;
+            case SUPER8 -> super8;
+            default -> throw new NoHayProductoException("No existe el depósito indicado");
+        };
+    }
+
+    /** Getter del depósito del vuelto
+     * @return depósito de vuelto
+     */
+    public Deposito<Moneda> getMonVu(){return monVu;}
 }

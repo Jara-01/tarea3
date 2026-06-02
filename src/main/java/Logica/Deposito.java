@@ -23,7 +23,8 @@ public class Deposito<T> {
         else return null;
     }
 
-    public ArrayList<T> getAlmacen(){
+    /** Getter de su almacén */
+    public ArrayList<T> getAlmacen() {
         return almacen;
     }
 }
