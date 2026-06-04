@@ -49,23 +49,16 @@ public class Expendedor{
      *
      * @param dinero Moneda que el usuario usa para comprar un producto.
      * @param type Identificador numérico del tipo de producto elegido por el usuario.
-    */
+     * @throws PagoIncorrectoException si no se ingresó moneda
+     * @throws PagoInsuficienteException si la moneda no alcanza
+     * @throws NoHayProductoException si el producto no existe o está agotado
+     */
     public void comprarProducto(Moneda dinero, int type)
             throws PagoIncorrectoException, PagoInsuficienteException, NoHayProductoException {
-        /**
-         * Primero se revisa el caso en que no haya moneda.
-         * Si el comprador intenta comprar con null, no se entrega producto y tampoco se deja vuelto en el deposito.
-         */
         if (dinero == null) {
             throw new PagoIncorrectoException("No se ingresó ninguna moneda");
         }
 
-        /**
-         * Si hay moneda, se determina cual es el deposito correcto
-         * también el producto del enum que corresponde al numero elegido.
-         * Si el numero no corresponde a ningun producto, se devuelve la
-         * misma moneda como vuelto y se lanza la excepcion.
-         */
         Deposito<Producto> dep;
 
         Precios productoActual = Precios.producto(type);
@@ -95,21 +88,11 @@ public class Expendedor{
                 throw new NoHayProductoException("No existe el producto indicado");
         }
 
-        /**
-         * Una vez identificado el producto, se revisa si la moneda alcanza.
-         * Si el valor de la moneda es menor al precio del producto,
-         * no se entrega nada y la misma moneda queda como vuelto.
-         */
         if (dinero.getValor() < productoActual.getPrecio()) {
             monVu.addElemento(dinero);
             throw new PagoInsuficienteException("Pago insuficiente");
         }
 
-        /**
-         * Si el pago es suficiente, se intenta sacar un producto desde el deposito.
-         * Si el deposito ya estaba vacio, tampoco se entrega producto
-         * y la misma moneda queda guardada en el deposito de vuelto.
-         */
         Producto auxOut = dep.getElemento();
 
         if (auxOut == null) {
@@ -117,14 +100,8 @@ public class Expendedor{
             throw new NoHayProductoException("No quedan productos de ese tipo");
         }
 
-        /** Si la compra es completamente exitosa, la moneda recibida se añade al depósito de ganancias */
         this.ganancias.addElemento(dinero);
 
-        /**
-         * Si todo sale bien, entonces se calcula la diferencia entre lo pagado
-         * y el precio del producto. Ese vuelto se deja en monedas en el mayor valor
-         * de moneda posible para completar el vuelto requerido.
-         */
         int cantidadVuelto = (dinero.getValor() - productoActual.getPrecio());
         while(cantidadVuelto >= 1500) {
             monVu.addElemento(new Moneda1500());
@@ -165,9 +142,55 @@ public class Expendedor{
     }
 
     /**
-     * Getter de un depósito de productos según el número indicado al llamar al método
-     * El número corresponde a los mismos que se usan internamente según el Enum Precios
-     * @return deposito escogido
+     * Permite ver el producto que está en la salida sin retirarlo.
+     *
+     * @return producto disponible o null si no hay
+     */
+    public Producto verProducto() {
+        return this.prodVu;
+    }
+
+    /**
+     * Rellena hasta 5 unidades los depósitos que estén vacíos.
+     */
+    public void rellenarDepositosVacios() {
+        if (coca.getAlmacen().isEmpty()) {
+            while (coca.getAlmacen().size() < 5) {
+                coca.addElemento(new CocaCola(1000 + coca.getAlmacen().size()));
+            }
+        }
+
+        if (sprite.getAlmacen().isEmpty()) {
+            while (sprite.getAlmacen().size() < 5) {
+                sprite.addElemento(new Sprite(2000 + sprite.getAlmacen().size()));
+            }
+        }
+
+        if (fanta.getAlmacen().isEmpty()) {
+            while (fanta.getAlmacen().size() < 5) {
+                fanta.addElemento(new Fanta(3000 + fanta.getAlmacen().size()));
+            }
+        }
+
+        if (snickers.getAlmacen().isEmpty()) {
+            while (snickers.getAlmacen().size() < 5) {
+                snickers.addElemento(new Snickers(4000 + snickers.getAlmacen().size()));
+            }
+        }
+
+        if (super8.getAlmacen().isEmpty()) {
+            while (super8.getAlmacen().size() < 5) {
+                super8.addElemento(new Super8(5000 + super8.getAlmacen().size()));
+            }
+        }
+    }
+
+    /**
+     * Entrega el depósito de productos asociado al identificador indicado.
+     *
+     * @param type identificador del producto
+     * @return depósito correspondiente
+     * @throws NoHayProductoException si no existe un depósito asociado a ese identificador
      */
     public Deposito<Producto> getDepProducto(int type) throws NoHayProductoException {
         Precios depositoActual = Precios.producto(type);
