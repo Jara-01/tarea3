@@ -1,7 +1,7 @@
 package Logica;
 
 /** Uno de los 3 sabores de bebida, extiende a Bebida. */
-class Sprite extends Bebida{
+public class Sprite extends Bebida{
     /**
      * Constructor que instancia un número de serie según la superclase Producto.
      *
@@ -17,5 +17,10 @@ class Sprite extends Bebida{
      */
     public String consumir(){
         return "sprite";
+    }
+
+    @Override
+    public String rutaImagen() {
+        return "/sprite.png";
     }
 }
