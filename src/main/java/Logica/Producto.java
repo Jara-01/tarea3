@@ -16,7 +16,5 @@ public abstract class Producto {
      * @return número de serie de la moneda.
      */
     public int getSerie() {return this.serie;}
-
-    public abstract String rutaImagen();
 }
 

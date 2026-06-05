@@ -18,9 +18,4 @@ public class Sprite extends Bebida{
     public String consumir(){
         return "sprite";
     }
-
-    @Override
-    public String rutaImagen() {
-        return "/sprite.png";
-    }
 }

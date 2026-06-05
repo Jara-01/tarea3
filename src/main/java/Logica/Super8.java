@@ -18,9 +18,4 @@ public class Super8 extends Dulce{
     public String consumir(){
         return "super8";
     }
-
-    @Override
-    public String rutaImagen() {
-        return "/super8.png";
-    }
 }
