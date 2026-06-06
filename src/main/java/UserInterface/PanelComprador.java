@@ -224,11 +224,11 @@ public class PanelComprador extends JPanel {
         g.setColor(Color.BLACK);
         g.drawString("Productos", x + 70, y + 145);
 
-        dibujarBoton(g, x + 20, y + 160, 180, 30, "CocaCola", Color.CYAN);
-        dibujarBoton(g, x + 20, y + 200, 180, 30, "Sprite", Color.GREEN);
-        dibujarBoton(g, x + 20, y + 240, 180, 30, "Fanta", Color.ORANGE);
-        dibujarBoton(g, x + 20, y + 280, 180, 30, "Snickers", Color.PINK);
-        dibujarBoton(g, x + 20, y + 320, 180, 30, "Super8", Color.MAGENTA);
+        dibujarBoton(g, x + 20, y + 160, 180, 30, "CocaCola $" + Precios.COCACOLA.getPrecio(), Color.CYAN);
+        dibujarBoton(g, x + 20, y + 200, 180, 30, "Sprite $" + Precios.SPRITE.getPrecio(), Color.GREEN);
+        dibujarBoton(g, x + 20, y + 240, 180, 30, "Fanta $" + Precios.FANTA.getPrecio(), Color.ORANGE);
+        dibujarBoton(g, x + 20, y + 280, 180, 30, "Snickers $" + Precios.SNICKERS.getPrecio(), Color.PINK);
+        dibujarBoton(g, x + 20, y + 320, 180, 30, "Super8 $" + Precios.SUPER8.getPrecio(), Color.MAGENTA);
 
         g.setColor(Color.BLACK);
         dibujarMensaje(g, mensaje, x + 20, y + 390, 180);
